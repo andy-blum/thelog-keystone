@@ -10,6 +10,7 @@ import { Bid } from './schema/Bid';
 import { DraftPick } from './schema/DraftPick';
 
 const sessionSecret = process.env.COOKIE_SECRET;
+const dbURL = process.env.DATABASE_URL;
 
 if (!sessionSecret) {
   throw new Error(
@@ -30,8 +31,8 @@ const { withAuth } = createAuth({
 export default withAuth(
   config({
     db: {
-      provider: 'sqlite',
-      url: 'file:../keystone.db',
+      provider: 'postgresql',
+      url: dbURL!,
     },
     ui: {
       // For our starter, we check that someone has session data before letting them see the Admin UI.
