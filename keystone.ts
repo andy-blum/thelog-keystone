@@ -52,7 +52,7 @@ export default withAuth(
     }),
     server: {
       cors: {
-        origin: ['http://localhost:7777', 'https://thelog-next.vercel.app/'],
+        origin: ['http://localhost:7777', 'https://thelog-next.vercel.app'],
         credentials: true,
       },
     },
