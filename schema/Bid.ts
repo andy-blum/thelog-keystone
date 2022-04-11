@@ -17,7 +17,7 @@ export const Bid = list({
       validation: {
         isRequired: true,
         min: 100,
-        max: 1000,
+        max: 10000,
       },
     }),
     years: integer({
